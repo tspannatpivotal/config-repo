@@ -12,7 +12,7 @@ spring:
   profiles: cloud
   cloud:
     config:
-      uri: ${vcap.services.${PREFIX:}configserver.credentials.uri:http://user:password@${PREFIX:}configserver.${application.domain:cfapps.io}}
+      uri: ${vcap.services.${PREFIX:}configserver.credentials.uri:http://user:password@${PREFIX:}configserver.${application.domain:south.fe.pivotal.io}}
 oauth2:
   client:
     tokenUri: ${vcap.services.${PREFIX:}sso.credentials.tokenUri:}
@@ -29,11 +29,11 @@ endpoints:
 eureka:
   password: password
   instance:
-    hostname: ${PREFIX:}${spring.application.name}.${application.domain:cfapps.io}
+    hostname: ${PREFIX:}${spring.application.name}.${application.domain:south.fe.pivotal.io}
     nonSecurePort: 80
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:cfapps.io}}/eureka/
+      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:south.fe.pivotal.io}}/eureka/
 
 ---
 spring:
